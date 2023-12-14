@@ -3,6 +3,7 @@ const mongoose  = require("mongoose");
 const userRoutes = require("./controllers/user/user");
 const addressRoutes = require("./controllers/user/address");
 const productCategoryRoutes = require("./controllers/product/product_category");
+const authUserRoutes = require("./controllers/user/auth");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.get("/", (req,res) => {
 app.use("/", userRoutes);
 app.use("/", addressRoutes);
 app.use("/", productCategoryRoutes);
+app.use("/", authUserRoutes);
 
 const initServer = async () => {
     try {
